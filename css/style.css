@@ -1,0 +1,190 @@
+        /* Definindo variáveis de cores para facilitar manutenção */
+        :root {
+            --azul-escuro: #0d1b2a;
+            --amarelo-neon: #ffd60a;
+            --azul-neon: #00b4d8;
+            --branco: #ffffff;
+            --preto: #000000;
+        }
+
+        /* Estilo global */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--azul-escuro);
+            color: var(--branco);
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: var(--preto);
+            padding: 10px 0;
+            border-bottom: 2px solid var(--azul-neon);
+            font-size: large;
+        }
+
+        /* Estilo da logo */
+        .logo {
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--azul-neon);
+            text-shadow: 0 0 10px var(--azul-neon);
+        }
+
+        /* Estilo das 4 divs com efeitos hover */
+        .div-hover {
+            background-color: var(--preto);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Efeito hover com borda neon azul */
+        .div-hover:hover {
+            border: 2px solid var(--azul-neon);
+            box-shadow: 0 0 15px var(--azul-neon);
+            transform: translateY(-5px);
+        }
+
+        /* Estilo da lista ordenada */
+        .lista-ordenada {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Estilo do carrossel */
+        .carousel-item {
+            height: 400px;
+            background-color: var(--preto);
+        }
+
+        .carousel-item img {
+            /* Prevent images from being cropped on the right side. Use contain to show the whole image
+               If you prefer the image to fully cover the area (may crop), use object-fit: cover; */
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* Estilo dos cards de vídeo */
+        .card-video {
+            background-color: var(--preto);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-video:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.3);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-text {
+            height: 80px;
+            /* tamanho do card */
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .data-insercao {
+            color: var(--azul-neon);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .situaçao-vendida {
+            color: var(--amarelo-neon);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            background-color: var(--preto);
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 2px solid var(--azul-neon);
+        }
+
+        .social-icons a {
+            color: var(--branco);
+            font-size: 2rem;
+            margin: 0 19px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--amarelo-neon);
+            transform: translateY(-3px);
+        }
+
+        /* Estilo para seções */
+        .section-title {
+            color: var(--azul-neon);
+            margin: 30px 0 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            font-style: italic;
+            color: var(--amarelo-neon)
+        }
+
+        .nav-link:hover {
+            color: var(--azul-neon);
+        }
+
+        /* Move navbar items more to the left and make them ~20% larger */
+        /* The HTML has .collapse.navbar-collapse.justify-content-end - we override that for wider screens */
+        @media (min-width: 768px) {
+            /* align the navbar items to the left of their column */
+            .navbar .navbar-collapse {
+                justify-content: flex-start !important;
+                padding-left: 0.5rem; /* small left offset inside the nav */
+            }
+
+            /* increase nav link size by ~20%: using font-size and padding */
+            .navbar .nav-link {
+                font-size: 1.25rem; /* slightly larger (~20%) */
+                padding: 0.65rem 0.9rem; /* tightened padding to keep items closer */
+                transform-origin: left center;
+            }
+
+            /* Reduce spacing between each nav item so they appear closer */
+            .navbar .navbar-nav {
+                margin-left: 0.25rem; /* bring the whole list closer to the logo */
+            }
+
+            .navbar .navbar-nav .nav-item + .nav-item {
+                margin-left: 0.25rem; /* small gap between items */
+            }
+        }
+
+        /* Small screens: keep toggler on the right but links inside collapse should be slightly larger */
+        @media (max-width: 767.98px) {
+            .navbar .nav-link {
+                font-size: 1.05rem;
+                padding: 0.6rem 0.75rem;
+            }
+        }
