@@ -62,7 +62,7 @@
 
         /* Estilo do carrossel */
         .carousel-item {
-            height: 35rem;
+            height: 15rem;
             background-color: var(--preto);
         }
 
