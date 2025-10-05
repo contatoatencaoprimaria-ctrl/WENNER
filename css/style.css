@@ -62,14 +62,14 @@
 
         /* Estilo do carrossel */
         .carousel-item {
-            height: 80%;
+            height: 50%;
             background-color: var(--preto);
         }
 
         .carousel-item img {
             /* Prevent images from being cropped on the right side. Use contain to show the whole image
                If you prefer the image to fully cover the area (may crop), use object-fit: cover; */
-            width:50%;
+            width:100%;
             height: auto;
             object-fit: contain;
             object-position: center;
