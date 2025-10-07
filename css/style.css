@@ -280,5 +280,10 @@
     height: 100%;
     object-fit: cover;
 }
-
+.bi-whatsapp {
+    font-size: 2rem;
+    color: #25D366; /* Cor verde do WhatsApp */
+    transition: transform 0.3s ease;
+  
+}
        
