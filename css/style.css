@@ -14,6 +14,11 @@
             color: var(--branco);
         }
 
+        /* garantir cálculo consistente de padding/border */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         /* Estilo do cabeçalho */
         header {
             background-color: var(--preto);
@@ -34,15 +39,18 @@
         .div-hover {
             background-color: var(--preto);
             border-radius: 15px;
-            padding: 50px;
+            padding: 24px;
             margin: 15px 0;
             transition: all 0.3s ease;
-            border: 4px solid transparent;
-            height: 150px;
+            border: 2px solid transparent;
+            /* remover altura fixa para o conteúdo poder quebrar naturalmente */
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            text-align: center;
+            word-break: break-word;
+            hyphens: auto;
         }
 
         /* Efeito hover com borda neon azul */
@@ -110,6 +118,25 @@
             /* tamanho do card */
             overflow: hidden;
             text-align: center;
+        }
+
+        /* Mobile: reduzir padding e fontes para evitar overflow */
+        @media (max-width: 576px) {
+            .div-hover {
+                padding: 14px;
+                min-height: auto;
+                align-items: flex-start; /* permitir que o texto fique no topo se houver mais linhas */
+            }
+
+            .div-hover h4, .div-hover h5 {
+                font-size: 1rem;
+                margin: 0.2rem 0;
+            }
+
+            .card-text {
+                height: auto;
+                font-size: 0.9rem;
+            }
         }
 
         .data-insercao {
